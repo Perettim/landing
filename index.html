@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Boeuf sur le Toit</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="language-switcher">
+    <a id="switch-en">English</a> | <a id="switch-fr">Français</a>
+  </div>
+
+  
+  <!-- Banner section -->
+  <div class="section bg-image">
+    <div class="overlay"></div>
+    <div class="content">
+      <h1 class="title" id="main-title">BOEUF SUR LE TOIT</h1>
+      <p class="subtitle" id="main-subtitle">
+        Passer la soiree sans en sortir
+      </p>
+      <div class="gray-100"> 
+        <button id="book-button" class="btn btn-100" onclick="location.href='https://eu.sevenrooms.com/reservations/leboeufsurletoit?venues=leboeufsurletoit%2Cnotoparisrestaurantpleyel%2Cvictoriaparis%2Cmankoparis%2Ccafelaperouseconcorde%2CLaperouse%2Cmimosarestaurant%2Cforestrestaurant%2Candia%2Ccreaturesjuliensebbag%2Cdeepfishbyandia%2Cruralbymarcverat%2Cclub13&y'">Réserver</button>
+      </div>    
+    </div>
+  </div>
+
+
+  <!-- Cards section -->
+  <div class="section section-2">
+    <h2 id="section-title">Nos Spécialités</h2>
+    <div class="cards">
+      <a class="sub-container" href="https://boeufsurletoit.com/wp-content/uploads/2023/09/2309-MENU-BRASSERIE-WEB-1.pdf">
+        <img src="images/card3.png" alt="Plat 1">
+        <h3 id="card-title-1">La carte</h3>
+        <p id="card-desc-1">Découvrez tout nos plats et menus</p>
+      </a>
+      <a class="sub-container" href="https://moma-group.com/nos-maisons/">
+        <img src="images/card2.png" alt="Plat 2">
+        <h3 id="card-title-2">Nos Maisons</h3>
+        <p id="card-desc-2">Un produit d’excellence qui vous suit ou que vous soyez.</p>
+      </a>
+      <a class="sub-container" href="https://moma-group.com/engagements/">
+        <img src="images/card1.png" alt="Plat 3">
+        <h3 id="card-title-3">Nos engagements</h3>
+        <p id="card-desc-3">L’inclusion, la transmission et l’écologie.</p>
+      </a>
+    </div>
+  </div>
+  
+
+
+  <!-- Footer section -->
+  <footer>
+    <div class="social-links">
+      <a href="https://www.instagram.com/boeufsurletoitparis" target="_blank">Instagram</a>
+      <a href="https://www.facebook.com/brasserieboeufsurletoit" target="_blank">Facebook</a>
+      <a href="mailto:contact@boeufsurletoit.com" id="mail-link">Email</a>
+    </div>
+    <p id="all-rights">© 2024 Boeuf sur le Toit. Tous droits réservés.</p>
+  </footer>
+  
+</body>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const langElements = {
+      'main-title': {
+        en: "BOEUF SUR LE TOIT",
+        fr: "BOEUF SUR LE TOIT"
+      },
+      'main-subtitle': {
+        en: "Spend the evening without leaving",
+        fr: "Passer la soiree sans en sortir"
+      },
+      'book-button': {
+        en: "Book",
+        fr: "Réserver"
+      },
+      'section-title': {
+        en: "Our Specialties",
+        fr: "Nos Spécialités"
+      },
+      'card-title-1': {
+        en: "The Menu",
+        fr: "La carte"
+      },
+      'card-desc-1': {
+        en: "Discover all our dishes and menus",
+        fr: "Découvrez tout nos plats et menus"
+      },
+      'card-title-2': {
+        en: "Our Houses",
+        fr: "Nos Maisons"
+      },
+      'card-desc-2': {
+        en: "An excellent product that follows you wherever you are.",
+        fr: "Un produit d’excellence qui vous suit ou que vous soyez."
+      },
+      'card-title-3': {
+        en: "Our Commitments",
+        fr: "Nos engagements"
+      },
+      'card-desc-3': {
+        en: "Inclusion, transmission, and ecology.",
+        fr: "L’inclusion, la transmission et l’écologie."
+      },
+      'mail-link':{
+        en: "Email",
+        fr: "Mail"
+      },
+      'all-rights':{
+        en: '© 2024 Boeuf sur le Toit. All rights reserved.',
+        fr: '© 2024 Boeuf sur le Toit. Tous droits réservés.'
+      }
+
+    };
+    
+  
+    function switchLanguage(lang) {
+      Object.keys(langElements).forEach((id) => {
+        const element = document.getElementById(id);
+        if (element) {
+          element.textContent = langElements[id][lang];
+        }
+      });
+      document.querySelectorAll('.language-switcher a').forEach((link) => {
+        link.classList.remove('active-lang');
+      });
+      document.getElementById(`switch-${lang}`).classList.add('active-lang');
+    }
+    document.getElementById('switch-en').addEventListener('click', () => switchLanguage('en'));
+    document.getElementById('switch-fr').addEventListener('click', () => switchLanguage('fr'));
+    switchLanguage('fr'); 
+
+  });
+  </script>
+  
+</html>
